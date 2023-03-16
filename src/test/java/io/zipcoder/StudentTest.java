@@ -42,7 +42,20 @@ public class StudentTest {
     }
 
     @Test
-    public void
+    public void testSetExamScore() {
+        // Given
+        String firstName = "Mr.";
+        String lastName = "Panda";
+        Double[] examScores = { 100.0 };
+        Student student = new Student(firstName,lastName,examScores);
+        // When
+        student.setExamScore(1, 150.0);
+        String expected = "[150.0]";
+        String output = student.getExamScores();
+
+        // Then
+        Assert.assertEquals(expected, output);
+    }
 
 
 }
