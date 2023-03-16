@@ -6,8 +6,8 @@ import java.util.Collections;
 public class Student {
     private String firstName;
     private String lastName;
-    ArrayList<Student> studentList = new ArrayList<>();
-    ArrayList<Double> examScores = new ArrayList<Double>();
+    private ArrayList<Student> studentList = new ArrayList<>();
+    private ArrayList<Double> examScores = new ArrayList<>();
 
     public Student(String first, String last, Double[] testScores) {
         this.firstName = first;
@@ -35,6 +35,13 @@ public class Student {
             System.out.printf("       Exam " + (i+1) + " -> %.0f\n" , + examScores.get(i));
         }
         return examScores.toString();
+    }
+    public void addExamScore(double examScore) {
+        examScores.add(examScore);
+    }
+    public void setExamScore(int examNumber, double newScore){
+        examScores.set(examNumber, newScore);
+
     }
 
 }
