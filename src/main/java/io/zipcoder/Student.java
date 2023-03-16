@@ -29,15 +29,12 @@ public class Student {
     public Double getNumberOfExamsTaken() {
         return (double) examScores.size();
     }
-    public ArrayList<Double> getExamScores() {
+    public String getExamScores() {
         System.out.println("Exam Scores: ");
-        for (int i = 1; i <= examScores.size(); i++) {
-            System.out.println("       Exam " + i + " -> " + examScores.get(i));
+        for (int i = 0; i < examScores.size(); i++) {
+            System.out.printf("       Exam " + (i+1) + " -> %.0f\n" , + examScores.get(i));
         }
-        return examScores;
+        return examScores.toString();
     }
-
-
-
 
 }
