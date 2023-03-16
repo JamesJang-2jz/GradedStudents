@@ -30,7 +30,10 @@ public class Student {
         return (double) examScores.size();
     }
     public ArrayList<Double> getExamScores() {
-        
+        System.out.println("Exam Scores: ");
+        for (int i = 1; i <= examScores.size(); i++) {
+            System.out.println("       Exam " + i + " -> " + examScores.get(i));
+        }
         return examScores;
     }
 
