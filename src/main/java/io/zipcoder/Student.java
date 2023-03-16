@@ -1,7 +1,6 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Student {
@@ -27,6 +26,15 @@ public class Student {
     public String getLastName() {
         return lastName;
     }
-    
+    public Double getNumberOfExamsTaken() {
+        return (double) examScores.size();
+    }
+    public ArrayList<Double> getExamScores() {
+        
+        return examScores;
+    }
+
+
+
 
 }
