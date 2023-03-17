@@ -6,7 +6,6 @@ import java.util.Collections;
 public class Student {
     private String firstName;
     private String lastName;
-    private ArrayList<Student> studentList = new ArrayList<>();
     private ArrayList<Double> examScores = new ArrayList<>();
 
     public Student(String first, String last, Double[] testScores) {
