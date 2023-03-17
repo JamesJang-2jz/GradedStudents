@@ -56,6 +56,33 @@ public class StudentTest {
         // Then
         Assert.assertEquals(expected, output);
     }
+    @Test
+    public void testGetAverageExamScore() {
+        // Given
+        String firstName = "Itsa me";
+        String lastName = "Mario";
+        Double[] examScores = {100.0, 150.0, 250.0, 0.0};
+        Student student = new Student(firstName, lastName, examScores);
+        // When
+        Double expected = (double) ((100+150+250)/4);
+        Double output = student.getAverageExamScore();
+        // Then
+        Assert.assertEquals(expected, output);
+    }
+    @Test
+    public void testToString() {
+        // Given
+        String firstName = "T-";
+        String lastName = "Rex";
+        Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
+        Student student = new Student(firstName, lastName, examScores);
+        // When
+        String expected = "Student Name: " + firstName + lastName + "\n" +
+                "> Average Score: " + student.getAverageExamScore() + "\n" +
+                "> Exam Scores: " + "\n" + student.getExamScores();
 
-
+        String actual = student.toString();
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }

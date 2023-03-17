@@ -40,8 +40,20 @@ public class Student {
         examScores.add(examScore);
     }
     public void setExamScore(int examNumber, double newScore){
-        examScores.set(examNumber-1, newScore);
+        examScores.set(examNumber - 1, newScore);
     }
-
+    public double getAverageExamScore() {
+        double avg = 0;
+        for (Double d : examScores) {
+            avg += d;
+        } return avg/examScores.size();
+    }
+    @Override
+    public String toString() {
+            return "Student Name: " + firstName + lastName + "\n" +
+                    "> Average Score: " + getAverageExamScore() + "\n" +
+                    "> Exam Scores: " + "\n" +
+                    getExamScores();
+    }
 
 }
