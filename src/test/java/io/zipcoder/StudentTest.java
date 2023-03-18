@@ -10,7 +10,7 @@ public class StudentTest {
     @Test
     public void testCreateStudent() {
 
-    }
+}
     @Test
     public void testGetExamScores(){
         // Given
@@ -22,7 +22,6 @@ public class StudentTest {
         String output = student.getExamScores();
         String expectedScore = Arrays.toString(examScores);
         // Then
-        System.out.println(output);
         Assert.assertEquals(expectedScore, output);
     }
     @Test
@@ -52,7 +51,6 @@ public class StudentTest {
         student.setExamScore(1, 150.0);
         String expected = "[150.0]";
         String output = student.getExamScores();
-
         // Then
         Assert.assertEquals(expected, output);
     }
