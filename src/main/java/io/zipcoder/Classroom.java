@@ -43,15 +43,12 @@ public class Classroom {
             }
         }   students = studentList.toArray(new Student[0]);
     }
-    public void getStudentsByScore(){
-        Arrays.sort(students);
-        ArrayList<Student> studentScores = new ArrayList<>();
-        Collections.addAll(studentScores, students);
-        studentScores.sort();
-
+    public Student[] getStudentsByScore(){
+        ArrayList<Student[]> studentSorted = new ArrayList<>();
+        Collections.sort(students);
+        return students;
     }
     public void getGradeBook() {
-
 
     }
 
