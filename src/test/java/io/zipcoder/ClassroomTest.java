@@ -1,11 +1,13 @@
 package io.zipcoder;
 
+import org.apache.commons.collections.MultiMap;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.invoke.CallSite;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Map;
 
 public class ClassroomTest {
     @Test
@@ -89,24 +91,36 @@ public class ClassroomTest {
     @Test
     public void testGetGradeBook(){
         // Given
-        Double[] examScores1 = {100.0};
-        Double[] examScores2 = {90.0};
-        Double[] examScores3 = {80.0};
-        Double[] examScores4 = {70.0};
-        Double[] examScores5 = {60.0};
-        Double[] examScores6 = {50.0};
+        Double[] examScores1 = {90.0};
+        Double[] examScores2 = {80.0};
+        Double[] examScores3 = {75.0};
+        Double[] examScores4 = {65.0};
+        Double[] examScores5 = {50.0};
+        Double[] examScores6 = {40.0};
+        Double[] examScores7 = {35.0};
+        Double[] examScores8 = {20.0};
+        Double[] examScores9 = {4.0};
+
         Student student1 = new Student("Cat", "Bob", examScores1);
         Student student2 = new Student("Dog", "Doggo", examScores2);
         Student student3 = new Student("Bird", "Pidgey", examScores3);
         Student student4 = new Student("Doug", "Pug", examScores4);
         Student student5 = new Student("Leo", "Lion", examScores5);
         Student student6 = new Student("Tom", "turtle", examScores6);
+        Student student7 = new Student("Zion", "Lion", examScores7);
+        Student student8 = new Student("Po", "panda", examScores8);
+        Student student9 = new Student("F", "Frog", examScores9);
         // When
-        Classroom classroom = new Classroom(new Student[] {student1, student2, student3, student4, student5, student6});
-        
+        Classroom classroom = new Classroom(new Student[] {student1, student2, student3, student4, student5, student6, student7, student8, student9});
+        Student[] A = new Student[] {student1, student2, student3, student4, student5};
+        Student[] B = new Student[] {student6};
+        Student[] C = new Student[] {student7};
+        Student[] D = new Student[] {student8};
+        Student[] F = new Student[] {student9};
 
+        MultiMap gb = classroom.getGradeBook();
         // Then
-
+        Assert.assertEquals(A, gb.get("A"));
     }
 
 
