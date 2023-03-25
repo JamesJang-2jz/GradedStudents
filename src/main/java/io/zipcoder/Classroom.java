@@ -1,5 +1,8 @@
 package io.zipcoder;
 
+import org.apache.commons.collections.MultiMap;
+import org.apache.commons.collections.map.MultiValueMap;
+
 import java.util.*;
 
 public class Classroom {
@@ -51,7 +54,23 @@ public class Classroom {
     }
     public Map< Character, Student[]> getGradeBook() {
         HashMap<Character, Student[]> gradeBook = new HashMap<>();
-        gradeBook.put('A',)
+        MultiMap gb = new MultiValueMap();
+        Student[] studentPlacement = new Student[0];
+        List<Student> studentsA = new ArrayList<>();
+        gradeBook.put('A',null);
+        gradeBook.put('B',null);
+        gradeBook.put('C',null);
+        gradeBook.put('D',null);
+        gradeBook.put('F',null);
+
+        double avgExam = getAverageExamScore();
+
+        for (Student st : students) {
+            if (st.getAverageExamScore() > avgExam * 0.9) {
+                gb.put('A', st);
+            } else if ()
+        }
+
 
 
     }

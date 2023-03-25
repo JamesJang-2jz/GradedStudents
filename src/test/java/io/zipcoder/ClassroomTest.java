@@ -89,8 +89,21 @@ public class ClassroomTest {
     @Test
     public void testGetGradeBook(){
         // Given
-
+        Double[] examScores1 = {100.0};
+        Double[] examScores2 = {90.0};
+        Double[] examScores3 = {80.0};
+        Double[] examScores4 = {70.0};
+        Double[] examScores5 = {60.0};
+        Double[] examScores6 = {50.0};
+        Student student1 = new Student("Cat", "Bob", examScores1);
+        Student student2 = new Student("Dog", "Doggo", examScores2);
+        Student student3 = new Student("Bird", "Pidgey", examScores3);
+        Student student4 = new Student("Doug", "Pug", examScores4);
+        Student student5 = new Student("Leo", "Lion", examScores5);
+        Student student6 = new Student("Tom", "turtle", examScores6);
         // When
+        Classroom classroom = new Classroom(new Student[] {student1, student2, student3, student4, student5, student6});
+        
 
         // Then
 
