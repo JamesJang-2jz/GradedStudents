@@ -52,31 +52,32 @@ public class Classroom {
         Arrays.sort(students);
         return students;
     }
-    public MultiMap getGradeBook() {
-        HashMap<Character, Student[]> gradeBook = new HashMap<>();
-        MultiMap gb = new MultiValueMap();
-//        gradeBook.put('A',null);
-//        gradeBook.put('B',null);
-//        gradeBook.put('C',null);
-//        gradeBook.put('D',null);
-//        gradeBook.put('F',null);
+    public Map<Character, ArrayList<Student>> getGradeBook() {
+        HashMap<Character, ArrayList<Student>> gradeBook = new HashMap<>();
+        gradeBook.put('A',new ArrayList<Student>());
+        gradeBook.put('B',new ArrayList<Student>());
+        gradeBook.put('C',new ArrayList<Student>());
+        gradeBook.put('D',new ArrayList<Student>());
+        gradeBook.put('F',new ArrayList<Student>());
+//        MultiMap gb = new MultiValueMap();
+
 
         double avgExam = getAverageExamScore();
 
         for (Student st : students) {
             if (st.getAverageExamScore() > avgExam * 0.9) {
-                gb.put("A", st);
+                gradeBook.get('A').add(st);
             } else if (st.getAverageExamScore() > avgExam * 0.71){
-                gb.put('B', st);
+                gradeBook.get('B').add(st);
             } else if (st.getAverageExamScore() > avgExam * 0.5){
-                gb.put('C', st);
+                gradeBook.get('C').add(st);
             } else if (st.getAverageExamScore() > avgExam * 0.11){
-                gb.put('D', st);
-            } else {
-                gb.put('F', st);
+                gradeBook.get('D').add(st);
+            } else if (st.getAverageExamScore() < avgExam * 0.11){
+                gradeBook.get('F').add(st);
             }
         }
-        return gb;
+        return gradeBook;
 
     }
     public HashMap<Character, Student[]> setGrades(){

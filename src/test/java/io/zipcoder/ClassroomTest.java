@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.invoke.CallSite;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Map;
@@ -112,15 +113,16 @@ public class ClassroomTest {
         Student student9 = new Student("F", "Frog", examScores9);
         // When
         Classroom classroom = new Classroom(new Student[] {student1, student2, student3, student4, student5, student6, student7, student8, student9});
-        Student[] A = new Student[] {student1, student2, student3, student4, student5};
-        Student[] B = new Student[] {student6};
-        Student[] C = new Student[] {student7};
-        Student[] D = new Student[] {student8};
-        Student[] F = new Student[] {student9};
+        Student[] A = new Student[]{student1, student2, student3, student4, student5};
+        Student[] B = new Student[]{student6};
+        Student[] C = new Student[]{student7};
+        Student[] D = new Student[]{student8};
+        Student[] F = new Student[]{student9};
 
-        MultiMap gb = classroom.getGradeBook();
+        Map<Character, ArrayList<Student>> gb = classroom.getGradeBook();
+        System.out.println(Arrays.toString(A));
         // Then
-        Assert.assertEquals(A, gb.get("A"));
+        Assert.assertArrayEquals(A, gb.get('A').toArray());
     }
 
 
