@@ -1,8 +1,6 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 public class Classroom {
     private Student[] students;
@@ -44,11 +42,20 @@ public class Classroom {
         }   students = studentList.toArray(new Student[0]);
     }
     public Student[] getStudentsByScore(){
-        ArrayList<Student[]> studentSorted = new ArrayList<>();
-        Collections.sort(students);
+        //        studentSorted.add(students);
+//        ArrayList<Student> studentSorted = new ArrayList<>(Arrays.asList(students));
+//        Collections.sort(studentSorted);
+//        return studentSorted.toArray();
+        Arrays.sort(students);
         return students;
     }
-    public void getGradeBook() {
+    public Map< Character, Student[]> getGradeBook() {
+        HashMap<Character, Student[]> gradeBook = new HashMap<>();
+        gradeBook.put('A',)
+
+
+    }
+    public HashMap<? , Student[]> setGrades(){
 
     }
 

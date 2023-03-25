@@ -74,20 +74,27 @@ public class ClassroomTest {
         // Given
         Double[] examScores1 = {150.0, 250.0, 133.0};
         Double[] examScores2 = {71.0, 56.0, 65.0};
-        Double[] examScores3 = { 72.0, 155.0, 45.0 };
+        Double[] examScores3 = {72.0, 155.0, 45.0};
         Student student1 = new Student(null, null, examScores1);
         Student student2 = new Student(null, null, examScores2);
         Student student3 = new Student(null, null, examScores3);
         // When
-        Student[] students = new Student[] {student1, student2, student3 };
+        Student[] students = new Student[]{student1, student2, student3};
         Classroom classroom = new Classroom(students);
-        Student[] expected = {student1, student3, student2 };
+        Student[] expected = {student1, student3, student2};
         Student[] actual = classroom.getStudentsByScore();
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void testGetGradeBook(){
+        // Given
+
+        // When
+
+        // Then
 
     }
-
 
 
 }
